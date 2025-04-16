@@ -110,4 +110,20 @@ if __name__=="__main__":
    app.btnUpdate.configure(command=update_command)
    app.btnDelete.configure(command=delete_command)
    app.btnClose.configure(command=app.window.destroy)
+   
+   # Configura máscara para CPF
+   def format_cpf(event=None):
+        cpf = app.txtCPF.get().replace(".", "").replace("-", "")
+        if len(cpf) > 11:
+            cpf = cpf[:11]
+        if len(cpf) > 3:
+            cpf = f"{cpf[:3]}.{cpf[3:]}"
+        if len(cpf) > 7:
+            cpf = f"{cpf[:7]}.{cpf[7:]}"
+        if len(cpf) > 11:
+            cpf = f"{cpf[:11]}-{cpf[11:]}"
+        app.txtCPF.set(cpf[:14])
+    
+   app.entCPF.bind("<KeyRelease>", format_cpf)
+   
    app.run()

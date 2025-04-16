@@ -72,6 +72,7 @@ def initDB():
 def insert(nome, sobrenome, email, cpf):
     trans = TransactionObject()
     try:
+        cpf = ''.join(filter(str.isdigit, cpf))  # Remove formatação
         trans.connect()
         trans.execute(
             "INSERT INTO clientes (nome, sobrenome, email, cpf) VALUES (%s, %s, %s, %s)",
@@ -117,6 +118,7 @@ def delete(id):
 def update(id, nome, sobrenome, email, cpf):
     trans = TransactionObject()
     try:
+        cpf = ''.join(filter(str.isdigit, cpf))  # Remove formatação
         trans.connect()
         trans.execute(
             """UPDATE clientes 
