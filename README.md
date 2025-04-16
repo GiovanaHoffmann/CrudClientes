@@ -6,7 +6,7 @@
 ## Gerenciamento de Clientes
 
 ## Descrição
-Esta é uma aplicação desktop desenvolvida em Python utilizando a biblioteca Tkinter para interface gráfica e SQLite como banco de dados. O sistema permite gerenciar um cadastro de clientes, possibilitando as operações CRUD (Create, Read, Update, Delete).
+Esta é uma aplicação desktop desenvolvida em Python utilizando a biblioteca Tkinter para interface gráfica e PostgreSQL como banco de dados. O sistema permite gerenciar um cadastro de clientes, possibilitando as operações CRUD (Create, Read, Update, Delete).
 
 ## Funcionalidades
 - Inserção de novos clientes
